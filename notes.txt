@@ -1,0 +1,44 @@
+1. Using a CDN
+
+    The simplest way to include Vue.js is by linking it via a Content Delivery Network (CDN).
+    Add the script tag in your HTML file:
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+
+    This is ideal for simple projects or when you want to quickly experiment with Vue.js without installing anything.
+
+2. Installing via NPM
+
+    If you're using a build system like Webpack, Vite, or Rollup, you can install Vue via npm:
+
+npm install vue
+
+Import it in your JavaScript files:
+
+    import { createApp } from 'vue';
+    const app = createApp({});
+    app.mount('#app');
+
+    This method is suitable for more complex applications with modular code.
+
+3. Using Vue CLI
+
+    Vue CLI is a powerful tool to scaffold a Vue.js project:
+
+    npm install -g @vue/cli
+    vue create my-project
+    cd my-project
+    npm run serve
+
+    This setup comes pre-configured with Webpack, Babel, and other tools, making it ideal for large-scale applications.
+
+4. Via Vite (Recommended for Vue 3)
+
+    Vite is a modern frontend tool that is fast and optimized for Vue 3:
+
+npm create vite@latest my-vue-app --template vue
+cd my-vue-app
+npm install
+npm run dev
+
+This approach offers a faster development experience with hot module replacement (HMR). 
