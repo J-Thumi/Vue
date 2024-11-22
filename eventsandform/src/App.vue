@@ -15,7 +15,7 @@
 <form @submit="submitForm">
 
   <label for="name">Name:</label>
-  <input type="text" id="name" v-model="inputField.name"><br><br>
+  <input type="text" id="name" v-model.lazy.trim="inputField.name"><br><br>
 
   <label for="summary">summary : </label>
   <textarea v-model="inputField.summary" id="summary"></textarea><br><br>
