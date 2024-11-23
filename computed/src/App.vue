@@ -18,6 +18,9 @@
     </ul>
   </div>
   <div>{{ adults }}</div>
+  <input type="text" v-model="movie">
+  <input type="text" v-model="movies.title">
+  <input type="text" v-model="movies.actor">
 </template>
 
 <script>
@@ -39,7 +42,12 @@ users:[
   }
 ],
 firstname:"Josphat",
-lastname:"Thumi"
+lastname:"Thumi",
+movie:'batman',
+movies:{
+  title:'Shameless',
+  actor:'Shawn'
+}
   }
  },
  methods:{
@@ -79,7 +87,20 @@ fullname:{
 volume(newvalue,oldvalue){
 if(newvalue>oldvalue && newvalue==4){
   alert("high volume")
-}}
+}},
+movie:{
+  handler(newvalue){
+  console.log(`new movie ${newvalue}`)
+},
+immediate:true //on page load
+},
+movies:{
+  handler(newvalue){
+    console.log(`The movie name is ${newvalue.title} and it is acted by ${newvalue.actor}`)
+  },
+  immediate:true,
+  deep:true
+}
 
  }
   
