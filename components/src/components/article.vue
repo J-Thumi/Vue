@@ -3,6 +3,7 @@
 <h1 v-bind="$attrs">{{ title }}</h1>
 <h1>{{ length }}</h1>
 <h1>{{ isPublished ? "yes" : "no" }}</h1>
+<h1>{{ username }}</h1>
     </div>
 </template>
 
@@ -18,7 +19,8 @@
             length:Number,
             isPublished:Boolean
         },
-        inheritAttrs:false
+        inheritAttrs:false,
+        inject:['username']
     }
 </script>
 

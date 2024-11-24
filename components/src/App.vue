@@ -27,6 +27,11 @@ export default {
   components:{
     GreetComponent,
     ArticleComponent
+  },
+  provide(){
+    return {
+      username: this.name
+    }
   }
  
 }
