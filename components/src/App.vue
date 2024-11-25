@@ -2,6 +2,8 @@
   <div>
     <button @click="show=true">show</button>
     <PopupComponent v-show='show' @close="closePop"/>
+    <button @click='popup=true'>open</button>
+    <Popup2Component v-show="popup" @close="popup=false"/>
 <GreetComponent name="Diana" hero="batman"/>
 <GreetComponent name="Joan" hero="superman"/>
 <GreetComponent :name="name" :hero="hero"/>
@@ -17,6 +19,7 @@
 import GreetComponent from './components/greet'
  import ArticleComponent from './components/article'
 import PopupComponent from './components/Popup'
+import Popup2Component from './components/popup2'
 
 export default {
   name: 'App',
@@ -24,7 +27,8 @@ export default {
     return {
       name:"Vishwas",
       hero:"Thanos",
-      show:false
+      show:false,
+      popup:false
 
     }
   },
@@ -39,7 +43,8 @@ export default {
   components:{
      GreetComponent,
    ArticleComponent,
-    PopupComponent
+    PopupComponent,
+    Popup2Component
   },
   provide(){
     return {
