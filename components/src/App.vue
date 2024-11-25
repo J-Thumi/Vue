@@ -1,32 +1,45 @@
 <template>
   <div>
-<GreetComponent name="Joe" hero="Hulk"/>
+    <button @click="show=true">show</button>
+    <PopupComponent v-show='show' @close="closePop"/>
 <GreetComponent name="Diana" hero="batman"/>
 <GreetComponent name="Joan" hero="superman"/>
 <GreetComponent :name="name" :hero="hero"/>
 <ArticleComponent id="title" title="hello" :length="30" :isPublished="true"/>
+
+
+
+<GreetComponent name="Joe" hero="Hulk"/>
 </div>
 </template>
 
 <script>
 import GreetComponent from './components/greet'
-import ArticleComponent from './components/article'
+ import ArticleComponent from './components/article'
+import PopupComponent from './components/Popup'
 
 export default {
   name: 'App',
   data(){
     return {
       name:"Vishwas",
-      hero:"Thanos"
+      hero:"Thanos",
+      show:false
 
     }
   },
-  methods:{},
+  methods:{
+    closePop(name){
+      this.show=false
+      console.log(`hello ${name}`)
+    }
+  },
   computed:{},
   watch:{},
   components:{
-    GreetComponent,
-    ArticleComponent
+     GreetComponent,
+   ArticleComponent,
+    PopupComponent
   },
   provide(){
     return {
