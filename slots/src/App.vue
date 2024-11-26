@@ -15,15 +15,30 @@
 <h1>footer here</h1>
 </template>
     </SlotComponent>
+
+   
+
+    <NamesComponent>
+      <template v-slot:default="slotProps">
+       FULLNAME: {{ slotProps.firstname }} {{slotProps.lastname}}
+        
+      </template>
+
+      <template v-slot:fnames="slotProps">
+       FIRSTNAME: {{ slotProps.firstname }} 
+        
+      </template>
+    </NamesComponent>
 </template>
 
 <script>
 import SlotComponent from './components/slot'
-
+import NamesComponent from './components/Names'
 export default {
   name: 'App',
   components: {
-    SlotComponent
+    SlotComponent,
+    NamesComponent
   }
 }
 </script>
