@@ -42,3 +42,20 @@ npm install
 npm run dev
 
 This approach offers a faster development experience with hot module replacement (HMR). 
+
+
+
+Computed properties in Vue.js are a powerful feature used to calculate values dynamically based on the component's data. Unlike methods, computed properties are cached based on their dependencies. They only re-compute when one of their dependencies changes, making them efficient and suitable for expensive operations.
+
+
+Provide and Inject in Vue
+
+In Vue, provide and inject are used for dependency injection, which allows passing data or methods from a parent component to deeply nested child components without prop-drilling (manually passing props through each level).
+How provide and inject Work
+
+    provide: The parent component makes a value (data, method, or object) available to its descendants.
+    inject: Any descendant component can access the provided value.
+
+
+
+custom events those in child components that affect the parent component we use emits:
